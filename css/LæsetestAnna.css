@@ -1,0 +1,88 @@
+.test-container {
+  width: 100%;
+  height: calc(100vh);
+  /*margin-top: 80px;*/
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+#readtest h1 {
+  width: 100%;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.read-intro {
+  width: 100%;
+  height: fit-content;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+.start-reading-test {
+  width: 100%;
+  height: fit-content;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+  margin-top: 55px;
+}
+/*START BUTTON*/
+.start-reading-test button {
+  align-self: center;
+  justify-self: center;
+  width: 160px;
+  height: 80px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--mediumdarkgray);
+  background-color: var(--lightgray);
+}
+
+.start-reading-test button:hover {
+  border: 2px solid var(--darkgray);
+  background-color: var(--mediumgray);
+}
+
+/*WHEN TAKING THE TEST*/
+#test-head-text {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.read-text {
+  width: 40%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+/*STOP BUTTON*/
+.stop-reading-test button {
+  align-self: center;
+  justify-self: center;
+  width: 160px;
+  height: 80px;
+  font-size: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--mediumdarkgray);
+  background-color: var(--lightgray);
+}
+
+.stop-reading-test button:hover {
+  border: 2px solid var(--darkgray);
+  background-color: var(--mediumgray);
+}

@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Studyplanner</title>
+    <link rel="icon" href="img/FavIcon.png" type="image/x-icon" />
+
+    <meta name="description" content="" />
+    <!-- Need a description -->
+    <meta name="author" content="Anna, Jonas, Kristoffer and Sofie" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- ref til sylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+
+    <link rel="stylesheet" href="css/loginAnna.css" />
+    <link rel="stylesheet" href="css/classPage.css" />
+    <link rel="stylesheet" href="css/createCourse.css" />
+    <link rel="stylesheet" href="css/createHomework.css" />
+    <link rel="stylesheet" href="css/profilePage.css" />
+    <link rel="stylesheet" href="css/LæsetestAnna.css" />
+  </head>
+
+  <body onload="AllOnLoadFunctions()">
+    <header class="header-main">
+      <div class="header-main-logo">
+        <a onclick="activatePage(indexMain)"
+          ><div class="header-main-logo-pic"></div
+        ></a>
+      </div>
+      <div class="header-main-profile">
+        <a onclick="activatePage(profilePageMain)"
+          ><div class="header-main-profile-pic"></div
+        ></a>
+      </div>
+    </header>
+    <!-- MAIN START -->
+
+    <!-- LOGIN -->
+    <main id="loginMain" class="login-container">
+      <header class="header-main">
+        <div class="header-main-logo">
+          <a onclick=""><div class="header-main-logo-pic"></div></a>
+        </div>
+      </header>
+      <div class="login-box">
+        <h1>Login</h1>
+        <p id="login-error"></p>
+        <div class="login-username-password">
+          <img src="img/Buttons/Username.png" alt="UsernameImage" />
+          <input
+            type="text"
+            id="loginUsernameID"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="login-username-password">
+          <img src="img/Buttons/Password.png" alt="PasswordImage" />
+          <input
+            type="password"
+            id="loginPasswordID"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="login-button">
+          <button onclick="LogInUser()">Log In</button>
+        </div>
+        <a
+          class="below-button"
+          style="text-decoration: underline; color: white"
+          onclick="GoToSignUp()"
+          >Create an account</a
+        >
+      </div>
+    </main>
+
+    <!-- SIGN UP -->
+    <main id="signupMain" class="login-container" hidden>
+      <header class="header-main">
+        <div class="header-main-logo">
+          <a><div class="header-main-logo-pic"></div></a>
+        </div>
+      </header>
+      <div class="login-box">
+        <h1>Sign Up</h1>
+        <p id="signup-error"></p>
+        <div class="login-username-password">
+          <img src="img/Buttons/Username.png" alt="UsernameImage" />
+          <input
+            type="text"
+            id="signUpUsernameID"
+            placeholder="Username"
+            required
+          />
+        </div>
+        <div class="login-username-password">
+          <img src="img/Buttons/Password.png" alt="PasswordImage" />
+          <input
+            type="password"
+            id="signUpPasswordID"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="login-button">
+          <button onclick="SignUpUser()">Sign Up</button>
+        </div>
+        <a
+          class="below-button"
+          style="text-decoration: underline; color: white"
+          onclick="activatePage(loginMain)"
+          >Already have an account?</a
+        >
+      </div>
+    </main>
+
+    <!-- INDEX -->
+    <main id="indexMain" class="box-container" hidden>
+      <div class="classes">
+        <div class="classes-box">
+          <!-- classes menu bar-->
+          <div class="header-classes">
+            <!--overskrift-->
+            <p style="font-family: Arial">Classes</p>
+            <!--add class image-->
+            <a onclick="activatePage(createCourseMain)"
+              ><div class="header-classes-add">
+                <img src="img/Buttons/AddButton.png" alt="addClassButton" />
+                <img
+                  src="img/Buttons/AddButton-hover.png"
+                  class="addButton-hover"
+                  alt="addClassButton"
+                />
+              </div>
+            </a>
+          </div>
+          <div class="classes-name-container" id="course-section">
+            <!-- Insert Courses -->
+          </div>
+        </div>
+      </div>
+      <div class="overview">
+        <div class="overview-box">
+          <!-- overview menu bar-->
+          <div class="header-overview">
+            <!--overskrift-->
+            <p style="font-family: Arial">Overview</p>
+            <!--add overview image-->
+            <a onclick="refreshOverviewButton()"
+              ><div class="header-overview-reload">
+                <img
+                  src="img/Buttons/RefreshButton.png"
+                  alt="reloadOverviewButton"
+                />
+                <img
+                  src="img/Buttons/RefreshButton-hover.png"
+                  class="ReloadButton-hover"
+                  alt="reloadOverviewButton"
+                />
+              </div>
+            </a>
+          </div>
+          <div class="classes-name-container" id="overview-section">
+            <!-- Insert days -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- CREATE COURSE -->
+    <main id="createCourseMain" class="full-screen-course-background" hidden>
+      <div class="course-container">
+        <div class="course-exit-container">
+          <!--EXIT CLASS-->
+          <div class="addHomework-course">
+            <a onclick="activatePage(indexMain)">
+              <div class="exitButton-course">
+                <!-- normal light grey check off button-->
+                <img
+                  src="img/Buttons/exitButtonGrayBG.png"
+                  alt="exitButton-course"
+                />
+                <!-- medium grey check off button when hovered-->
+                <img
+                  src="img/Buttons/exitButtonGrayBG-hover.png"
+                  class="exitButton-course-hover"
+                  alt="exitButton-course"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+        <p>Create Course</p>
+        <div class="course-create-name">
+          <input type="course-create" id="course-name" required />
+          <a onclick="CheckAddCourse()">
+            <div class="CheckoffButton">
+              <!-- normal light grey check off button-->
+              <img src="img/Buttons/CheckOffButton.png" alt="checkoffGray" />
+              <!-- medium grey check off button when hovered-->
+              <img
+                src="img/Buttons/CheckOffButton-hover.png"
+                class="CheckoffButton-hover"
+                alt="checkoffGray"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- COURSE PAGE -->
+    <main id="coursePageMain" hidden>
+      <div class="classespage-container">
+        <!--Information on top od the box with scroll-->
+        <div class="class-add-share-cross">
+          <!--CHOOSE CLASS-->
+          <div class="chooseClass">
+            <select
+              onchange="selectCourse1()"
+              name="type-class1"
+              id="type-class1"
+              required
+            >
+              <!-- <option hidden selected disabled>Choose class</option> -->
+              <!--
+                <option value="selectClass">Dansk 3K</option>
+                <option value="selectClass">Matematik</option>
+                <option value="selectClass">Fransk 3KV</option>
+                <option value="selectClass">Tysk</option>
+                <option value="selectClass">Fysik</option>
+                <option value="selectClass">Idræt</option>
+                 -->
+            </select>
+          </div>
+          <!--ADD HOMEWORK-->
+          <div class="addHomework">
+            <a onclick="activatePage(createHomeworkMain)">
+              <div class="addButton">
+                <!-- light grey-->
+                <img src="img/Buttons/AddButton.png" alt="addButton" />
+                <!-- medium grey-->
+                <img
+                  src="img/Buttons/AddButton-hover.png"
+                  class="addButton-hover"
+                  alt="addButton"
+                />
+              </div>
+            </a>
+            <p>Add Homework</p>
+          </div>
+
+          <!--SHARE CLASS-->
+          <div class="addHomework">
+            <a>
+              <div class="shareButton">
+                <!-- light grey-->
+                <img src="img/Buttons/ShareButton.png" alt="shareButton" />
+                <!-- medium grey-->
+                <img
+                  src="img/Buttons/ShareButton-hover.png"
+                  class="shareButton-hover"
+                  alt="shareButton"
+                />
+              </div>
+            </a>
+            <p>Share</p>
+          </div>
+
+          <!--EXIT CLASS-->
+          <div class="addHomework">
+            <a onclick="activatePage(indexMain)">
+              <div class="exitButton">
+                <!-- light grey-->
+                <img src="img/Buttons/ExitButton.png" alt="exitButton" />
+                <!-- medium grey-->
+                <img
+                  src="img/Buttons/ExitButton-hover.png"
+                  class="exitButton-hover"
+                  alt="exitButton"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+        <!--box with scroll-->
+        <div class="classes-scroll-container">
+          <div class="classes-scroll-container-boxes">
+            <div class="scroll-class">
+              <div class="scroll-name-container" id="homework-section">
+                <!--classes boxes here-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- CREATE HOMEWORK -->
+    <main id="createHomeworkMain" hidden>
+      <div class="createHomework-container">
+        <!--Information on top od the box with scroll-->
+        <div class="homework-exit">
+          <!--CHOOSE CLASS-->
+          <!--bruger vi den her id i java-->
+          <div class="chooseHomework">
+            <select
+              onchange="selectCourse2()"
+              name="type-class2"
+              id="type-class2"
+              required
+              selected
+            >
+              <!-- <option hidden selected disabled>Choose class</option>
+              <option value="selectClass">Dansk 3K</option>
+              <option value="selectClass">Matematik</option>
+              <option value="selectClass">Fransk 3KV</option>
+              <option value="selectClass">Tysk</option>
+              <option value="selectClass">Fysik</option>
+              <option value="selectClass">Idræt</option> -->
+            </select>
+          </div>
+
+          <!--EXIT CLASS-->
+          <div class="addHomework-homework">
+            <a>
+              <div class="exitButtonHomework">
+                <!-- light grey-->
+                <img
+                  src="img/Buttons/ExitButton.png"
+                  alt="exitButtonHomework"
+                />
+                <!-- medium grey-->
+                <img
+                  src="img/Buttons/ExitButton-hover.png"
+                  class="exitButtonHomework-hover"
+                  alt="exitButtonHomework"
+                />
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="create-add-homework-text">
+          <p>Add Homework</p>
+        </div>
+
+        <div class="create-add-homework-container">
+          <div class="create-info-submit">
+            <div class="create-info">
+              <div class="create-box-style">
+                <p>Titel of homework</p>
+                <div class="create-box-placement">
+                  <textarea
+                    id="homeTitle"
+                    name="titel-of-homework"
+                    rows="17"
+                    cols="22"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="create-box-style">
+                <p>Description of homework</p>
+                <div class="create-box-placement">
+                  <textarea
+                    id="homeDesc"
+                    name="description-of-homework"
+                    rows="17"
+                    cols="22"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="create-box-style">
+                <p>Amount</p>
+                <div class="create-box-placement">
+                  <div class="create-amount-type-deadline">
+                    <input
+                      id="homeAmount"
+                      type="number"
+                      placeholder="Amount of ..."
+                      required
+                    />
+                    <select name="typeH" id="homeType" required selected>
+                      <option value="missing" hidden selected disabled>
+                        Choose Type
+                      </option>
+                      <option value="pages">Pages</option>
+                      <option value="words">Words</option>
+                      <option value="minutes">Minutes</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="create-box-style">
+                <p>Deadline</p>
+                <div class="create-box-placement">
+                  <div class="create-amount-type-deadline">
+                    <input id="homeDate" type="date" required />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="create-submit">
+              <p>Submit</p>
+              <div class="addHomework">
+                <a onclick="CheckAddHomework()">
+                  <div class="CheckoffButton">
+                    <!-- light grey-->
+                    <img
+                      src="img/Buttons/CheckOffButton.png"
+                      alt="shareButton"
+                    />
+                    <!-- medium grey-->
+                    <img
+                      src="img/Buttons/CheckOffButton-hover.png"
+                      class="CheckoffButton-hover"
+                      alt="CheckoffButton"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+
+            <!--<button onclick="createHomework()">Create Homework</button>-->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- PROFILE PAGE -->
+    <main id="profilePageMain" hidden>
+      <div>
+        <div class="profile-pic-logout">
+          <!--profile picture and username -->
+          <div class="profile-profile-pic">
+            <img src="./img/profile pic placeholder.png" alt="profile-pic" />
+            <!-- <span> -->
+            <p id="prof-username">*Username*</p>
+            <!-- </span> -->
+          </div>
+          <!--Logout-->
+
+          <div class="addHomework">
+            <a>
+              <div class="profile-retakeButton">
+                <button onclick="activatePage(loginMain)" style="width: 100px">
+                  Log out
+                </button>
+                <!-- MANGLER NAV -->
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-read-retake">
+          <!--reading speed-->
+          <div class="profile-reading-speed">
+            <p style="font-weight: bold">Reading speed:</p>
+            <p><span id="wpm"></span> words/minute</p>
+          </div>
+        </div>
+
+        <!--button to retake the test-->
+        <div class="profile-retake">
+          <div class="profile-retakeButton">
+            <button onclick="activatePage(readtest1Main)">
+              Take the reading test
+            </button>
+            <!-- KIG OM NAV PASSER -->
+          </div>
+        </div>
+        <!--table with weekly schedule-->
+        <div class="profile-plan">
+          <p class="weekly-title">Average weekly hours:</p>
+          <p class="weekly-description">
+            Fill in the average hours of available time you have each weekday.
+          </p>
+          <div class="profile-table">
+            <table id="free-time">
+              <thead>
+                <tr class="weekdays-row">
+                  <th scope="col"><p>Monday</p></th>
+                  <th scope="col"><p>Tuesday</p></th>
+                  <th scope="col"><p>Wednesday</p></th>
+                  <th scope="col"><p>Thursday</p></th>
+                  <th scope="col"><p>Friday</p></th>
+                  <th scope="col"><p>Saturday</p></th>
+                  <th scope="col"><p>Sunday</p></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <input
+                      id="monTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      id="tueTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      id="wedTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      id="thuTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      id="friTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      id="satTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      id="sunTime"
+                      type="number"
+                      min="0"
+                      max="8"
+                      placeholder=""
+                      class="input-data"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!--confirm button-->
+            <div class="profile-confirm">
+              <div class="profile-confirmButton">
+                <button onclick="CheckSchedule()">Confirm</button>
+              </div>
+            </div>
+          </div>
+          <p id="schedule-confirmation"></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- READ TEST 1 -->
+    <main id="readtest1Main" hidden>
+      <div class="test-container">
+        <h1>How to take the test?</h1>
+        <div class="read-intro">
+          <p>
+            <strong>1: Press START when you are ready to take the test</strong>
+            <br />
+            <br />Read the text with your normal reading pace. Make sure you
+            understand what you read.
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <strong>2: Press STOP, when you are done reading</strong>
+            <br /><br />
+            Try to be as precise as possible, when stopping the test.
+            <br /><br />
+            Your speed is important for planning your schedule.
+          </p>
+        </div>
+        <div class="start-reading-test">
+          <button onclick="StartTest()">START</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- READ TEST 2 -->
+    <main id="readtest2Main" class="test-container" hidden>
+      <div class="read-intro">
+        <div class="read-text">
+          <p id="test-head-text">What happens to you when you stop smoking?</p>
+
+          <p style="line-height: 1.6">
+            Quitting smoking is not something you can do in a quarter of an
+            hour. It is a long-term process that entails different reactions
+            over a certain period of time. Some of them are of a psychological
+            or emotional nature, while others are direct withdrawal symptoms,
+            because the body suddenly has to do without a certain strong
+            substance - nicotine. Those who turn it on even before they swing
+            their legs out of bed in the morning are the ones who have the
+            biggest withdrawal problems. The first nicotine doses of the day
+            stimulate the brain and central nervous system, while later doses
+            can have a calming effect. This explains why those trying to quit
+            smoking often experience two different kinds of sleep disturbances.
+            Drowsiness during the day is a common phenomenon - while at the same
+            time it can be difficult to sleep at night.
+          </p>
+        </div>
+      </div>
+      <div class="stop-reading-test">
+        <button onclick="StopTest()">STOP</button>
+      </div>
+    </main>
+
+    <!-- READ TEST 3 -->
+    <main id="readtest3Main" class="test-container" hidden>
+      <div>
+        <p style="font-family: Arial; font-size: x-large" id="stop-timer"></p>
+        <div class="start-reading-test">
+          <button onclick="activatePage(profilePageMain)">
+            Return to profile
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- MAIN END -->
+
+    <!-- SCRIPTS -->
+    <script src="testData.js"></script>
+    <script src="index.js"></script>
+    <script src="pageNav.js"></script>
+  </body>
+</html>

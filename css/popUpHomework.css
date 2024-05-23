@@ -1,0 +1,164 @@
+*, *::after, *::before{
+    box-sizing: border-box
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup {
+    font-family: Arial, sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--lightgray);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.popup-content {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    /*justify-content: space-evenly;*/
+}
+
+.popup1 {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 10px 10px;
+}
+
+    /*TITLE*/
+        .title{
+            width: 300px;
+            height: 50px;
+            padding: 10px;
+            border: 1.5px solid var(--darkgray);
+            border-radius: 15px;
+            align-content: center;
+            display: flex;
+            background-color: var(--mediumgray);
+            margin-right: 20px;
+        }
+        .title p{
+            align-self: center;
+            font-size: 15px;
+        }
+
+        /*EDIT BUTTON*/
+            /* add button in the menu bar classes*/ 
+            .addHomework img { 
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+
+            .addHomework img:hover { 
+                background-image: url(../img/Buttons/EditButton-hover.png);
+                border-radius: 10px; /*så billedet har runde kanter*/
+            }
+
+            /*shareButton hover*/
+            .editButton {
+                width: 50px;
+                height: 50px;
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .editButton .editButton-hover {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .editButton:hover .editButton-hover {
+                display: inline;
+            }
+                
+    .editButton:hover .editButton-hover {
+        display: inline;
+    }
+
+.popup2 {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    margin: 0 0 10px 10px;
+    justify-content: space-between;
+}
+    .description {
+        width: calc(100% - 110px);
+        height: calc(50px + 50px + 10px); /*height of boath boxes and the margin*/
+        padding: 5px 10px;
+        border: 1.5px solid var(--darkgray);
+        border-radius: 15px;
+        align-content: center; /**/
+        display: flex; /**/
+        background-color: #DDDDDD;/*var(--mediumgray)*/
+    }
+
+    .description p { /**/
+        font-size: 12px;
+    }
+
+    .pages{
+        width: 90px;
+        height: 50px;
+        padding: 10px;
+        border: 1.5px solid var(--darkgray);
+        border-radius: 15px;
+        margin: 0 0 10px 10px ;
+        background-color: #DDDDDD;/*var(--mediumgray)*/
+        align-content: center; /**/
+        display: flex; /**/
+    }
+
+    .pages p {
+        align-self: center;
+        font-size: 12px;
+    }
+
+    .deadline{
+        width: 90px;
+        height: 50px;
+        padding: 10px;
+        border: 1.5px solid var(--darkgray);
+        border-radius: 15px;
+        margin: 0 0 0 10px;
+        background-color: #DDDDDD;/*var(--mediumgray)*/
+        align-content: center; /**/
+        display: flex; /**/
+    }
+
+    .deadline p {
+        align-self: center;
+        font-size: 12px;
+    }
+
+.popup .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--mediumdarkgray);
+
+}
+
+        
+        

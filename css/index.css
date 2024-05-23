@@ -1,0 +1,358 @@
+[hidden] {
+  display: none !important;
+}
+
+.box-container {
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  background-color: var(--background-SP);
+  margin-top: 60px;
+  position: fixed;
+}
+
+/*------------CLASSES------------*/
+
+/*PLACEMENT OF CLASSES - LEFT SIDE OF THE SCREEN*/
+.classes {
+  flex: 50%;
+  background-color: var(--background-SP);
+  align-items: center;
+  display: flex;
+}
+
+/*CLASSES BOX - LIGHT GREY*/
+.classes-box {
+  background-color: var(--lightgray);
+  width: 85%;
+  height: 85%;
+  align-self: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px 0 #00000032;
+}
+
+/*CLASSES MENU BAR*/
+/* menu bar classes*/
+.header-classes {
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--menu-bar);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000; /*gør så nav er på alle sider*/
+  border-radius: 15px 15px 0 0;
+  align-items: center;
+  box-shadow: 0 2px 6px 0 #00000032; /*drop nshadow*/
+}
+
+/* text "Classes" in the menu bar classes*/
+.header-classes p {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  text-decoration: underline var(--menu-bar);
+  margin-left: 30px;
+}
+
+/*ADD BUTTON*/
+/* add button in the menu bar classes*/
+.header-classes a img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.header-classes a img:hover {
+  background-image: url(../img/Buttons/AddButton-hover.png);
+  border-radius: 10px; /*så billedet har runde kanter*/
+}
+
+/*addButton hover*/
+.header-classes-add {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+.header-classes-add .addButton-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.header-classes-add:hover .addButton-hover {
+  display: inline;
+}
+
+/*CLASS BOX CONTAINER*/
+/* box with all the different class boxes inside*/
+.classes-name-container {
+  width: 100%;
+  height: calc(100% - 60px);
+  display: flex;
+  flex-direction: column;
+  /*background-color: #ff7e7e;*/
+  max-height: 100%;
+  max-width: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+  flex: 1 0 0;
+}
+
+/*CLASS BUTTONS*/
+/* The blue class boxes*/
+.classes-name {
+  background-color: var(--menu-bar-light); /*blå*/
+  width: calc(
+    100% - 40px
+  ); /*afstanden mellem text boksen og den lysegrå box i siderne*/
+  height: 100px;
+  align-self: center;
+  justify-content: center;
+  margin: 10px 20px;
+  border-radius: 15px;
+  align-content: center;
+  display: flex;
+  border: 1px solid var(--menu-bar) 50%; /*border, very suttle*/
+  box-shadow: 0 2px 6px 0 #00000032;
+}
+
+/* text inside the class boxes*/
+.classes-name p {
+  align-self: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: 20px;
+  font-weight: 100;
+  color: #fff;
+  text-decoration: underline var(--menu-bar-light); /*fjerner stregen under tekst*/
+}
+
+.classes-name:hover {
+  transform: scale(1.05);
+}
+
+/*------------OVERVIEW------------*/
+
+/*PLACEMENT OF OVERVIEW - RIGHT SIDE OF THE SCREEN*/
+.overview {
+  flex: 50%;
+  background-color: var(--background-SP);
+  display: flex;
+}
+
+/* OVERVIEW BOX*/
+.overview-box {
+  background-color: var(--lightgray);
+  width: 85%;
+  height: 85%;
+  align-self: center;
+  justify-content: center;
+  margin: auto;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px 0 #00000032;
+}
+
+/* OVERVIEW MENUBAR */
+.header-overview {
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--menu-bar);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000; /*gør så nav er på alle sider*/
+  border-radius: 15px 15px 0 0;
+  align-items: center;
+  box-shadow: 0 2px 6px 0 #00000032; /*drop nshadow*/
+}
+
+/* text in the header of overview*/
+.header-overview p {
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+  margin-left: 30px;
+}
+
+/*REFRESH BUTTON*/
+/* refresh button in the header of overview*/
+.header-overview a img {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.header-overview a img:hover {
+  background-image: url(../img/Buttons/RefreshButton-hover.png);
+  border-radius: 10px; /*så billedet har runde kanter*/
+}
+
+/*ReloadButton hover*/
+.header-overview-reload {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+.header-overview-reload .ReloadButton-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.header-overview-reload:hover .ReloadButton-hover {
+  display: inline;
+}
+
+/*LIGHT GREY BOX - OVERVIEW*/
+.overview-box-container {
+  width: 100%;
+  height: (100% - 60px);
+  display: flex;
+  flex-direction: column;
+  /*background-color: #ff7e7e;*/
+  max-height: 100%;
+  max-width: 100%;
+  overflow: scroll;
+  flex: 1 0 0;
+}
+
+/*MEDIUM GREY BOXES*/
+.overview-name {
+  background-color: var(--mediumgray); /*blå*/
+  width: calc(
+    100% - 40px
+  ); /*afstanden mellem text boksen og den lysegrå box i siderne*/
+  height: auto;
+  align-self: center;
+  justify-content: center;
+  margin: 10px 20px;
+  border-radius: 15px;
+  /*align-content: center;*/
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--menu-bar) 50%; /*border, very suttle*/
+  column-gap: 10px;
+  box-shadow: 0 2px 6px 0 #00000032;
+}
+
+/*SMALL BOEXS HEADERS*/
+/*headers of the small boxes*/
+.overview-name-small-header {
+  width: 100%;
+  height: 40px;
+  background-color: var(--menu-bar-light);
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-basis: 100%;
+  border-radius: 15px 15px 0 0;
+  text-align: center;
+}
+
+/*p elements inside the headers of the small boxes*/
+.overview-name-small-header p {
+  color: #fff;
+  display: inline;
+  margin: 0 10px;
+}
+
+/*THE DIFFRERNT ELEMENTS INSIDE THE MEDIUM GREY BOX IN OVERVIEW*/
+/*Date in the header of the boxes*/
+.overview-name-small-header-date {
+  text-decoration: var(--menu-bar-light);
+  font-size: 12px;
+  align-self: left;
+}
+
+/*Day in the header of the boxes*/
+.overview-name-small-header-day {
+  text-decoration: var(--menu-bar-light);
+  font-size: 18px;
+  align-self: center;
+}
+
+/*Total time in the header of the boxes*/
+.overview-name-small-header-total {
+  text-decoration: var(--menu-bar-light);
+  font-size: 12px;
+  align-self: right;
+}
+
+/*HOMEWORK INFORMATION AND CHECK OFF*/
+/*information of the homework*/
+.overview-name-small-info {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  font-weight: 100;
+  font-size: 12px;
+}
+/*CHECKOFF BUTTON*/
+/*image in small info (check off button - light grey) */
+.overview-name-small-info img {
+  width: 40px;
+  height: 40px;
+  position: left;
+  margin-left: 10px;
+}
+
+/*picture that pops up when the user is hovering over light check off button*/
+.overview-name-small-info img:hover {
+  background-image: url(../img/Buttons/CheckOffButton-Hover.png);
+  border-radius: 10px; /*så billedet har runde kanter*/
+}
+
+/*picture that pops up when the user is clicking on the checkoff button*/
+.overview-name-small-info img:active {
+  background-image: url(../img/Buttons/CheckOffButton\ -\ Green.png);
+  border-radius: 10px; /*så billedet har runde kanter*/
+}
+
+.CheckoffButton {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+}
+
+/*CheckoffButton hover*/
+.CheckoffButton .CheckoffButton-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+.CheckoffButton:hover .CheckoffButton-hover {
+  display: inline;
+}
+
+/*checkoff green*/ /*VIRKER IKKE*/
+.CheckoffButton .CheckoffButton-green {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+.CheckoffButton:active .CheckoffButton-green {
+  display: inline;
+}

@@ -1,0 +1,258 @@
+#profilepage {
+  width: 95%;
+  overflow-x: hidden;
+}
+
+#prof-username {
+  font-family: Arial;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/*PROFILE PIC, USERNAME, AND LOGOUT*/
+.profile-pic-logout {
+  width: 100%;
+  display: inline-flex;
+  margin: 80px 20px 40px 20px;
+  align-items: center;
+}
+
+/*PROFILE PIC AND USERNAME*/
+.profile-profile-pic {
+  width: calc(100vw - 170px); /*space between prof pic + username and logout*/
+  display: inline-flex;
+  align-items: center;
+}
+
+.profile-profile-pic img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+}
+
+.profile-profile-pic p {
+  margin-left: 20px;
+  text-decoration: underline #000;
+  font-size: 20px;
+}
+
+/*LOGOUT*/
+
+#profilepage .addHomework img {
+  width: 130px;
+  height: fit-content;
+}
+
+#profilepage .addHomework img:hover {
+  background-image: url(../img/Buttons/Logout-hover.png);
+  border-radius: 10px; /*så billedet har runde kanter*/
+}
+
+/*logoutButton hover*/
+#profilepage .logoutButton {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 10px;
+}
+#profilepage .logoutButton .logoutButton-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+#profilepage .logoutButton:hover .logoutButton-hover {
+  display: inline;
+}
+
+/*READING SPEED + RETAKE ETST*/
+.profile-read-retake {
+  display: inline-flex;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: fit-content;
+}
+
+.profile-read-retake p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+}
+
+/*READINGSPEED*/
+.profile-reading-speed {
+  width: 400px;
+  display: inline-flex;
+  text-indent: 5px;
+}
+
+/*RETAKE TEST BUTTON*/
+.profile-retake {
+  align-self: center;
+  width: 180px;
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+
+.profile-retakeButton button {
+  padding: 10px 10px;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--lightgray);
+  border: 2px solid var(--darkgray);
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-retakeButton:hover button {
+  padding: 10px 10px;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--mediumgray);
+  border: 2px solid var(--darkgray);
+  border-radius: 10px;
+  border-width: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.profile-retakeButton:active button {
+  padding: 10px 10px;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--darkgray);
+  border: 2px solid var(--mediumgray);
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*TABEL WOTH WEEKLY SCHEDULE*/
+.profile-plan {
+  margin-left: 20px;
+  margin-bottom: 100px;
+  width: calc(100vw - 40px);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profile-plan p {
+  width: 100%;
+  color: var(--darkgray);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  margin-left: 5px;
+  width: calc(100%-40px);
+}
+
+.profile-plan .weekly-title {
+  text-align: left;
+  color: black;
+  font-weight: bold;
+  /* left: 525px; */
+  margin-bottom: 5px;
+  margin-left: 525px;
+  margin-right: 0px;
+}
+
+.profile-plan .weekly-description {
+  text-align: left;
+  color: black;
+  font-weight: normal;
+  /* left: 525px; */
+  margin-top: 0px;
+  margin-left: 525px;
+  margin-right: 0px;
+}
+
+.profile-table {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  border: 2px solid var(--mediumgray);
+  border-radius: 20px;
+  padding: 20px 20px;
+}
+
+/*BORDER AROUND THE TABLE AND CONFIRM BUTTON*/
+#profilepage table,
+th,
+td {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+/*DAYS IN THE TABLE HEADER*/
+.profile-table p {
+  align-items: center;
+  margin: 4px;
+  color: #000;
+  width: 100px;
+}
+
+#profilepage th {
+  width: 100%;
+  background-color: var(--mediumgray);
+  border: 2px solid var(--mediumgray);
+  border-radius: 15px;
+}
+
+/*DATA IN THE TABLE*/
+.profile-table td input {
+  align-self: center;
+  width: calc(100% - 50px);
+  margin: 5px 20px 0 20px;
+  border: 2px solid var(--mediumgray);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+/*CONFIRM BUTTON*/
+.profile-confirm {
+  align-self: center;
+  width: 100px;
+  margin-top: 40px;
+}
+
+.profile-confirmButton button {
+  padding: 10px 10px;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--lightgray);
+  border: 2px solid var(--darkgray);
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.profile-confirmButton:hover button {
+  padding: 10px 10px;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--mediumgray);
+  border: 2px solid var(--darkgray);
+  border-radius: 10px;
+  border-width: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.profile-confirmButton:active button {
+  padding: 10px 10px;
+  width: 100%;
+  height: fit-content;
+  background-color: var(--darkgray);
+  border: 2px solid var(--mediumgray);
+  border-radius: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#schedule-confirmation {
+  color: black;
+  margin: 20px;
+  text-align: center;
+}
+
+td ::placeholder {
+  color: var(--border-color);
+}

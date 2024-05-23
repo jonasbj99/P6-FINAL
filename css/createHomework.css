@@ -1,0 +1,243 @@
+/*.classespage-container*/
+.createHomework-container {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: var(--background-SP);
+    margin-top: 60px; /*Height of the menu bar*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+}
+
+/*.class-add-share-cross*/
+.homework-exit {
+    width: 85%;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    column-gap: 20px;
+    flex: 1 0 0;
+    position: absolute;
+}
+
+/*.chooseClass*/
+.chooseHomework {
+    width: 200px;
+    height: 50px;
+    line-height: 10vh;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    align-content: center;
+}
+
+/*.chooseClass*/
+.chooseHomework select{
+    width: 100%;
+    padding-left: 50px;
+    height: 40px;
+    line-height: 10vh;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    border: var(--lightgray);
+    background-color: var(--lightgray);
+    border-radius: 10px;
+    border-width: 2px;
+    padding: 10px;
+}
+
+/*  EXIT BUTTON*/
+        /*add homework - button + text*/
+        .addHomework-homework {
+            width: 50px;
+            height: 50px;
+            /*background-color: blue;*/
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            margin-left: 950px; /*to make the space between chooseHomework and exit*/
+        }
+        /*add homework image*/
+        .addHomework-homework a img{
+            width: 30px;
+            height: 30px;
+            align-self: center;
+            top: 50%;
+            text-align: center;
+        }
+        /*add homework text*/
+        .addHomework-homework p{
+            color: var(--darkgray);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+ /*EXIT BUTTON*/    
+            /* share button in the menu bar classes*/ 
+            .addHomework-homework img { 
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+
+            .addHomework-homework img:hover { 
+                background-image: url(../img/Buttons/ExitButton-hover.png);
+                border-radius: 10px; /*så billedet har runde kanter*/
+            }
+
+            /*shareButton hover*/
+            .exitButtonHomework {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .exitButtonHomework .exitButtonHomework-hover {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .exitButtonHomework:hover .exitButtonHomework-hover {
+                display: inline;
+            }
+
+
+
+
+
+
+
+    .create-add-homework {
+        width: 100%;
+        height: 10vh;
+        margin-top: calc(100% - 60px - 10vh);
+    }
+
+.create-add-homework-text {
+    width: 85%;
+    height: fit-content;
+    margin-left: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: var(--mediumdarkgray);
+}
+
+.create-add-homework-container{
+    width: 85%;
+    height: 60vh;
+    background-color: var(--lightgray);
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+/*BOX WITH INFO SECTION AND SUBMIT*/
+.create-info-submit {
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    /* ª */
+}
+
+/*INFO SECTION*/
+    .create-info {
+        width: 100%;
+        height: calc(100% - 70px);
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+    /*The box sourrounding the 4 different information boxes (invissible)*/
+    .create-box-style {
+        width: 20%;
+        height: 100%; /*højde af info elementerne */
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-between;
+        background-color: var(--mediumdarkgray);
+        margin: 0 auto;
+        border-radius: 20px;
+    }
+
+    .create-box-style p {
+        width: 100%;
+        height: fit-content;
+        text-align: center;
+        margin-top: 30px;
+        color: black;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .create-box-placement {
+        width: 100%;
+        height: calc(100% - 50px);
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+    }
+
+    .create-box-placement textarea {
+        border-radius: 10px;
+        border: 2px solid #969696 ;
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+   .create-amount-type-deadline {
+        width: 100%;
+        height: calc(100% - 30px);
+        margin: 0 20px 20px 20px;
+   }
+
+   #amountH {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #969696 ;
+   }
+
+   #typeH {
+    border-radius: 5px;
+    border: 2px solid #969696 ;
+   }
+
+   #deadlineH {
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 2px solid #969696 ;
+   }
+
+/*SUBMIT SECTION*/
+    .create-submit {
+        width: 100%;
+        height: 70px;
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: right;
+        margin-right: 25px;
+    }
+
+    .create-submit p {
+        align-self: center;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--mediumdarkgray);
+        font-size: 20px;
+    }

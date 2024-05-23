@@ -1,0 +1,88 @@
+:root { /*bruges til at lave farver som kan refereres til i hele koden, brug var() når man referer til dem*/
+  --site-color-01: #4049cc;
+  --site-color-01-hover: #21016a;
+  --border-color: #c2d5ff;
+  --background-SP: #fff;
+  --menu-bar: #769FCD;
+  --menu-bar-light: #87b5e9;
+  --lightgray: #ECECEC;
+  --mediumgray: #DDDDDD;
+  --mediumdarkgray: #CBCBCB;
+  --darkgray: #B9B9B9;
+
+}
+/* bagground color */
+body{
+  margin:0;
+  padding:0;
+  background:var(--background-SP);
+}
+
+a {
+  font-size: 15px;
+  line-height: 25px;
+  color: #000;
+  font-family: "Barlow", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* TOP MENU BAR*/
+.header-main {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: var(--menu-bar);
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000; /*gør så nav er på alle sider*/
+}
+
+/*LOGO INSIDE THE MENU BAR*/
+.header-main-logo { 
+  width: fit-content;
+  height: 100%;
+  /*background-color: #54d1a7;*/
+  padding-left: 20px;
+  display: flex;
+}
+
+/*LOGO IMAGE*/
+.header-main-logo-pic { 
+  width: 220px;
+  height: 80%;
+  background-image: url(../img/logo.png); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 10px;
+  align-self: center;
+}
+
+/*PROFILE CONTAINER*/
+.header-main-profile { 
+  width: fit-content;
+  height: 100%;
+  /*background-color: #54d1a7;*/
+  display: flex;
+  padding-right: 10px;
+  align-items: center;
+}
+
+/*PROFILE IMAGE*/
+  .header-main-profile-pic { 
+    width: 40px;
+    height: 40px;
+    background-image: url(../img/profile\ pic\ placeholder.png);  /*viser ikke*/
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: #ff8787;*/
+    border-radius: 50%;
+    border: 2px solid var(--border-color);
+  }
+
+
+  .header-main-profile-pic:hover { /*profilepicture hover*/
+    transform: scale(1.2);
+  }
+

@@ -1,0 +1,281 @@
+.classespage-container {
+    width: 100%;
+    height: calc(100% - 60px);
+    background-color: var(--background-SP);
+    margin-top: 60px; /*Height of the menu bar*/
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    position: fixed;
+}
+
+/*CLASS, ADD, SHARE, AND CROSS OF CONTAINER*/
+.class-add-share-cross {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    column-gap: 20px;
+    flex: 1 0 0;
+    position: absolute;
+}
+
+    /*CHOOSE CLASS*/
+        /*Choose what class you want to see homework for*/
+        .chooseClass {
+            width: fit-content;
+            height: 100%;
+            line-height: 10vh;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .chooseClass select{
+            width: 200%;
+            padding-left: 5px;
+            height: 50%;
+            line-height: 10vh;
+            position: relative;
+            font-family: Arial, Helvetica, sans-serif;
+            border: var(--lightgray);
+            background-color: var(--lightgray);
+            border-radius: 10px;
+            border-width: 2px;
+        }
+
+    /*ADD HOMEWORK*/
+        /*add homework - button + text*/
+        .addHomework {
+            width: fit-content;
+            height: 100%;
+            /*background-color: blue;*/
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+        }
+        /*add homework image*/
+        .addHomework a img{
+            width: 30px;
+            height: 30px;
+            align-self: center;
+            top: 50%;
+            text-align: center;
+        }
+        /*add homework text*/
+        .addHomework p{
+            color: var(--darkgray);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+
+        /*addButton hover remove margin from index.css*/
+        .header-classes-add {
+            position: relative;
+            margin-right: 30px;
+        }
+
+        /*ADD HOMEWORK BUTTON*/
+            /* add button in the menu bar classes*/ 
+            .addHomework img { 
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+
+            .addHomework img:hover { 
+                background-image: url(../img/Buttons/AddButton-hover.png);
+                border-radius: 10px; /*så billedet har runde kanter*/
+            }
+
+            /*shareButton hover*/
+            .addButton {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .addButton .addButton-hover {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .addButton:hover .addButton-hover {
+                display: inline;
+            }
+
+
+    /*SHARE CLASS*/ /*inherits from .addHomework{} to make the buttons work and be in the same placement*/
+
+        /*SHARE HOMEWORK BUTTON*/
+            /* share button in the menu bar classes*/ 
+            .addHomework img { 
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+
+            .addHomework img:hover { 
+                background-image: url(../img/Buttons/ShareButton-hover.png);
+                border-radius: 10px; /*så billedet har runde kanter*/
+            }
+
+            /*shareButton hover*/
+            .shareButton {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .shareButton .shareButton-hover {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .shareButton:hover .shareButton-hover {
+                display: inline;
+            }
+
+
+    /*EXIT BUTTON*/    
+            /* share button in the menu bar classes*/ 
+            .addHomework img { 
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+                margin-top: 10px;
+            }
+
+            .addHomework img:hover { 
+                background-image: url(../img/Buttons/ExitButton-hover.png);
+                border-radius: 10px; /*så billedet har runde kanter*/
+            }
+
+            /*shareButton hover*/
+            .exitButton {
+                width: 40px;
+                height: 40px;
+                position: relative;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            .exitButton .exitButton-hover {
+                display: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 99;
+            }
+            .exitButton:hover .exitButton-hover {
+                display: inline;
+            }
+
+/*SCROLL CONTAINER*/
+   .classes-scroll-container {
+        width: 83.5%;
+        height: 77vh; 
+        background-color: var(--lightgray);
+        margin: 0 30px 40px 30px;
+        align-self: center;
+        justify-content: center;
+        border-radius: 15px;
+        /*
+        overflow: scroll;
+        overflow-x: hidden;  Tilføj for at undgå horisontal scroll bar */
+        box-shadow: 0 2px 6px 0 #00000032;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: center;
+        margin-top: 80px;
+        padding-top: 10px;
+    }
+
+    /*makes the smallboxes fill the whole contaier*/
+    .classes-scroll-container-boxes {
+        width: 100%;
+        height: 100%;
+        align-self: center;
+        justify-content: center;
+        margin: auto;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+        /* text inside the class boxes*/
+       .scroll-name p { 
+            align-self: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 20px;
+            font-weight: 100;
+            color: #fff;
+            text-decoration: underline var(--menu-bar-light); /*fjerner stregen under tekst*/
+        }
+
+        .scroll-name:hover {
+            transform: scale(1.05);
+        }
+
+       .scroll-class {
+            width: 100%;
+            height: 100%;
+            align-self: center;
+            justify-content: center;
+            overflow: hidden;
+       }
+
+       .scroll-name-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            max-height: 100%;
+            max-width: 100%;
+            overflow: scroll;
+            overflow-x: hidden;
+            flex: 1 0 0;
+        }
+
+        .scroll-name { 
+            background-color: var(--mediumgray); /*grey*/
+            height: 70px;
+            align-self: center;
+            justify-content: center;
+            margin: 10px 20px;
+            border-radius: 15px;
+            align-content: center;
+            display: flex;
+            border: 1px solid var(--darkgray) 80%;  /*border, very suttle*/
+            box-shadow: 0 2px 6px 0 #00000032;
+        }
+
+        /* text inside the class boxes*/
+       .scroll-name p { 
+            align-self: center;
+            justify-content: center;
+            margin: 0 auto;
+            font-size: 12px;
+            font-weight: 100;
+            color: #000000;
+            text-decoration: underline var(--mediumgray); /*fjerner stregen under tekst*/
+        }
+
+        .scroll-name:hover {
+            transform: scale(1.02);
+        }
+    
+       
+       
+           
