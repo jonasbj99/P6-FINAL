@@ -366,25 +366,25 @@ function assignTime(arr) {
   for (let i = 0; i < funcArr.length; i++) {
     switch (funcArr[i].weekday) {
       case 0:
-        funcArr[i].availableTime = schedule.sun;
-        break;
-      case 1:
-        funcArr[i].availableTime = schedule.mon;
-        break;
-      case 2:
-        funcArr[i].availableTime = schedule.tue;
-        break;
-      case 3:
-        funcArr[i].availableTime = schedule.wed;
-        break;
-      case 4:
-        funcArr[i].availableTime = schedule.thu;
-        break;
-      case 5:
         funcArr[i].availableTime = schedule.fri;
         break;
-      case 6:
+      case 1:
         funcArr[i].availableTime = schedule.sat;
+        break;
+      case 2:
+        funcArr[i].availableTime = schedule.sun;
+        break;
+      case 3:
+        funcArr[i].availableTime = schedule.mon;
+        break;
+      case 4:
+        funcArr[i].availableTime = schedule.tue;
+        break;
+      case 5:
+        funcArr[i].availableTime = schedule.wed;
+        break;
+      case 6:
+        funcArr[i].availableTime = schedule.thu;
         break;
       default:
         console.log("assignTime() SWITCH PROBLEM!!!");
