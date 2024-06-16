@@ -26,13 +26,13 @@ let sunTime = document.getElementById("sunTime");
 const scheduleConfirm = document.getElementById("schedule-confirmation");
 
 const weekdayArr = [
+  "Friday",
+  "Saturday",
   "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
-  "Friday",
-  "Saturday",
 ];
 
 // ----------------
